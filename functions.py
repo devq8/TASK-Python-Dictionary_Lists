@@ -47,7 +47,6 @@ print("CHALLENGE 1")
 def get_book_property(property, book):
     return book[property]
 
-
 print(get_book_property("color", books[0]))
 print(get_book_property("title", books[0]))
 
