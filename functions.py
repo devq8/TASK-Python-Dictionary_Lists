@@ -42,7 +42,8 @@ print(add_summary_to_book("this is a good book about", books[0]))
 # recieves a property (string)
 # return the book property
 
-
+print("")
+print("CHALLENGE 1")
 def get_book_property(property, book):
     return book[property]
 
@@ -56,11 +57,12 @@ print(get_book_property("title", books[0]))
 # receives a list of books
 # return a new list of unavailable books
 
-
+print("")
+print("CHALLENGE 2")
 def calculate_not_available_books(books):
     unavailable_books = []
     for book in books:
-        if book["available"] == False :
+        if not book["available"] :
             unavailable_books.append(book)
     return unavailable_books
 
@@ -72,11 +74,19 @@ print(calculate_not_available_books(books))
 # receives a author name (string)
 # recieves a list of book dictionaries
 # returns the book dictionary that contains an author with the author name provided
+
+print("")
+print("CHALLENGE 3")
 def get_book_by_author_name(author_name, books):
     filtered_books = []
     for book in books:
-        if author_name in book["authors"][0]["name"] :
-            filtered_books.append(book)
+        # Loop for all books
+        for author in book["authors"]:
+            # In case the book has multiple author
+            if author_name in author["name"]:
+                
+                filtered_books.append(book)
+
     return filtered_books
 
 print(get_book_by_author_name("Neil Gaiman", books))
